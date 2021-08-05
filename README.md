@@ -1,6 +1,11 @@
 
-# react-native-baidu-vtts
+# @potatoma/react-native-baidu-vtts
 This is an React-native library that can do text-to-speech
+Forked from [react-native-baidu-vtts](https://www.npmjs.com/package/react-native-baidu-vtts)
+
+### What is the difference
+1. Added stop method to stop synthesis and stop playback.
+2. Init with female voice.
 
 ### Before
 please follow this page [ReactNative集成百度语音合成](https://blog.csdn.net/wayne214/article/details/85045229)
@@ -64,12 +69,19 @@ class App extends Component{
         RNBaiduvoice.speak('百度语音')
     }
 
+    _speechStop = () => {
+        RNBaiduvoice.stop()
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 {/*<TwoList/>*/}
                 <TouchableOpacity onPress={this._speechText}>
                     <Text style={{fontSize: 20, height: 30}}>测试语音</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this._speechStop}>
+                    <Text style={{fontSize: 20, height: 30}}>停止播放</Text>
                 </TouchableOpacity>
             </View>
         );

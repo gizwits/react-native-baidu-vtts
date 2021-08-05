@@ -37,6 +37,11 @@ public class RNBaiduvoiceModule extends ReactContextBaseJavaModule {
     utils.speak(msg);
   }
 
+  @ReactMethod
+  public void stop() {
+    utils.stop();
+  }
+
   @Override
   public void onCatalystInstanceDestroy() {
     utils.release();
