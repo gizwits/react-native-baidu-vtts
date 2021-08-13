@@ -16,11 +16,11 @@ current is only support android, ios coming soon.
 
 ## Getting started
 
-`$ npm install react-native-baidu-vtts --save`
+`$ npm install @potatoma/react-native-baidu-vtts --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-baidu-vtts`
+`$ react-native link @potatoma/react-native-baidu-vtts`
 
 ### Manual installation
 
@@ -41,18 +41,18 @@ coming soon
   - Add `new RNBaiduvoicePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-baidu-vtts'
-  	project(':react-native-baidu-vtts').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-baidu-vtts/android')
+  	include ':@potatoma_react-native-baidu-vtts'
+  	project(':@potatoma_react-native-baidu-vtts').projectDir = new File(rootProject.projectDir, 	'../node_modules/@potatoma/react-native-baidu-vtts/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-    implementation project(':react-native-baidu-vtts')
+    implementation project(':@potatoma_react-native-baidu-vtts')
   	```
 
 
 ## Usage
 ```javascript
-import RNBaiduvoice from 'react-native-baidu-vtts';
+import RNBaiduvoice from '@potatoma/react-native-baidu-vtts';
 
 // TODO: What to do with the module?
 class App extends Component{
