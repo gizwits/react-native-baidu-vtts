@@ -20,17 +20,19 @@ public class FileUtil {
     public static String createTmpDir(Context context) {
         String sampleDir = "baiduTTS";
         String tmpDir = "";
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            tmpDir = context.getExternalFilesDir(sampleDir).getAbsolutePath();
-        } else {
-            tmpDir = Environment.getExternalStorageDirectory().toString() + "/" + sampleDir;
-        }
+        tmpDir = context.getFilesDir().getPath() + "/" + sampleDir;
+        // if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        //     tmpDir = context.getExternalFilesDir(sampleDir).getAbsolutePath();
+        // } else {
+        //     tmpDir = Environment.getExternalStorageDirectory().toString() + "/" + sampleDir;
+        // }
 
         if (!FileUtil.makeDir(tmpDir)) {
-            tmpDir = context.getExternalFilesDir(sampleDir).getAbsolutePath();
-            if (!FileUtil.makeDir(sampleDir)) {
-                throw new RuntimeException("create model resources dir failed :" + tmpDir);
-            }
+            throw new RuntimeException("create model resources dir failed :" + tmpDir);
+            // tmpDir = context.getExternalFilesDir(sampleDir).getAbsolutePath();
+            // if (!FileUtil.makeDir(sampleDir)) {
+            //     throw new RuntimeException("create model resources dir failed :" + tmpDir);
+            // }
         }
         return tmpDir;
     }
