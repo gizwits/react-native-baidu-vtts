@@ -189,6 +189,9 @@ public class MySyntherizer implements MainHandlerConstant {
     }
 
     public void release() {
+        if (mSpeechSynthesizer == null) {
+            return;
+        }
         mSpeechSynthesizer.stop();
         mSpeechSynthesizer.release();
         mSpeechSynthesizer = null;
