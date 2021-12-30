@@ -1,6 +1,6 @@
 {
   "name": "@potatoma/react-native-baidu-vtts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A ReactNative library can do text to speech",
   "main": "index.js",
   "scripts": {
